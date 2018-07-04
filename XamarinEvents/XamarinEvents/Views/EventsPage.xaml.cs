@@ -1,8 +1,5 @@
 ﻿using Refit;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -32,7 +29,7 @@ namespace XamarinEvents.Views
                 eventTitle = null,
                 fromDate = "Thu Jul 27 2017",
                 lang = "en",
-                pageSize = 50,
+                pageSize = 100,
                 regionID = 0,
                 startIndex = 0,
                 toDate = "Sun Dec 31 2017"
