@@ -11,6 +11,7 @@ namespace XamarinEvents
 		public App ()
 		{
 			InitializeComponent();
+
             MainPage = new NavigationPage(new WelcomePage());
         }
 

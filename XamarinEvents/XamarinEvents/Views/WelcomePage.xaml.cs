@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Acr.UserDialogs;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,6 +7,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using XamarinEvents.Service;
 
 namespace XamarinEvents.Views
 {
@@ -24,7 +26,7 @@ namespace XamarinEvents.Views
 
         private async void MediaButton_ClickedAsync(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new MediaPage());
+           await Navigation.PushAsync(new MapPage());
         }
     }
 }

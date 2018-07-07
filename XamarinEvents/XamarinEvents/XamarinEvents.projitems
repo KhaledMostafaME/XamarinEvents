@@ -16,6 +16,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Service\PushMsg.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\EventsPage.xaml.cs">
       <DependentUpon>EventsPage.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -26,6 +27,10 @@
     <Compile Include="$(MSBuildThisFileDirectory)Models\EventsApiResponse.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Search.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Service\IEventsApi.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\MapPage.xaml.cs">
+      <DependentUpon>MapPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Views\MediaPage.xaml.cs">
       <DependentUpon>MediaPage.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -49,6 +54,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\MediaPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\MapPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
