@@ -30,7 +30,7 @@ namespace XamarinEvents.Views
         {
 
 
-            pushMsg.sendToast("Loading Events...",3000, Color.Red);
+            pushMsg.sendToast("Loading Events...Please Wait",3000, Color.Green);
 
             var payload = new Search
             {
@@ -70,7 +70,6 @@ namespace XamarinEvents.Views
                     pushMsg.sendToast("Select item to search by", 3000, Color.Red);
                 else
                 {
-
                 
                 EventsList.BeginRefresh();
 
@@ -95,9 +94,6 @@ namespace XamarinEvents.Views
             }
             else
                 pushMsg.sendToast("Get Events first", 3000, Color.Red);
-
-
-            Debug.WriteLine("Test null");
         }
 
 
