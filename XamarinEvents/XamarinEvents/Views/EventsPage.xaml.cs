@@ -17,8 +17,8 @@ namespace XamarinEvents.Views
 	public partial class EventsPage : ContentPage
 	{
         EventsApiResponse res = new EventsApiResponse();
+        
         PushMsg pushMsg = new PushMsg();
-
         public EventsPage ()
 		{
 			InitializeComponent ();
@@ -41,7 +41,7 @@ namespace XamarinEvents.Views
                 eventTitle = null,
                 fromDate = "Thu Jul 27 2017",
                 lang = "en",
-                pageSize = 200,
+                pageSize = 10,
                 regionID = 0,
                 startIndex = 0,
                 toDate = "Sun Dec 31 2017"
@@ -98,5 +98,12 @@ namespace XamarinEvents.Views
 
 
 
+        private async void EventsList_ItemSelectedAsync(object sender, SelectedItemChangedEventArgs e)
+        {
+                Debug.WriteLine("###### Item Tabbed #######");
+                var selectedEvent = e.SelectedItem as Record;
+
+                await Navigation.PushAsync(new MapPage(selectedEvent));
+        }
     }
 }

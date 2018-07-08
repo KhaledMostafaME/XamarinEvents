@@ -5,36 +5,63 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms">
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout Margin="10" Orientation="Vertical">
             <StackLayout>
                 <!--  Place new controls here  -->
-                <Button
-                    x:Name="GetEvents"
-                    Clicked="GetEvents_ClickedAsync"
-                    Text="Get Events" />
+                <StackLayout
+                    HorizontalOptions="FillAndExpand"
+                    Orientation="Horizontal"
+                    Spacing="0">
+                    <Button
+                        x:Name="GetEvents"
+                        Clicked="GetEvents_ClickedAsync"
+                        HorizontalOptions="FillAndExpand"
+                        Text="Get Events" />
+                    <Button
+                        x:Name="GetPins"
+                        HorizontalOptions="FillAndExpand"
+                        Text="Open Map" />
+                </StackLayout>
                 <SearchBar
                     x:Name="searchBar"
-                    BackgroundColor="LightGreen"
                     CancelButtonColor="Red"
-                    HeightRequest="40"
-                    Placeholder="Search by Event Title"
+                    HorizontalOptions="Start"
+                    Placeholder="Events Search"
                     PlaceholderColor="Gray"
                     SearchButtonPressed="searchBar_SearchButtonPressed"
+                    SearchCommand=""
                     TextChanged="searchBar_TextChanged"
                     TextColor="Black" />
-                <Picker x:Name="searchPicker" Title="Search by">
-                    <Picker.ItemsSource>
-                        <x:Array Type="{x:Type x:String}">
-                            <x:String>Title</x:String>
-                            <x:String>Start Date</x:String>
-                            <x:String>End Date</x:String>
-                            <x:String>City</x:String>
-                        </x:Array>
-                    </Picker.ItemsSource>
-                </Picker>
+                <StackLayout
+                    HorizontalOptions="FillAndExpand"
+                    Orientation="Horizontal"
+                    Spacing="0">
+                    <Button
+                        x:Name="SortEvents"
+                        HorizontalOptions="FillAndExpand"
+                        Text="Sort" />
+                    <Picker
+                        x:Name="searchPicker"
+                        Title="Search by"
+                        HorizontalOptions="EndAndExpand">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>Title</x:String>
+                                <x:String>Start Date</x:String>
+                                <x:String>End Date</x:String>
+                                <x:String>City</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+
+                </StackLayout>
             </StackLayout>
 
-            <ListView x:Name="EventsList" RowHeight="100">
+
+            <ListView
+                x:Name="EventsList"
+                ItemSelected="EventsList_ItemSelectedAsync"
+                RowHeight="100">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>

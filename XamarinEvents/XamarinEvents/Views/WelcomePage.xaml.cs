@@ -21,12 +21,12 @@ namespace XamarinEvents.Views
 
         private async void EventsButton_ClickedAsync(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new EventsPage());
+            await Navigation.PushModalAsync(new EventsPage());
         }
 
         private async void MediaButton_ClickedAsync(object sender, EventArgs e)
         {
-           await Navigation.PushAsync(new MapPage());
+           await Navigation.PushModalAsync(new MediaPage());
         }
     }
 }

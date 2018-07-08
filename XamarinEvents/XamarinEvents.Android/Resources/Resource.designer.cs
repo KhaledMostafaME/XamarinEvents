@@ -4284,6 +4284,9 @@ namespace XamarinEvents.Droid
 		public partial class String
 		{
 			
+			// aapt resource value: 0x7f09004f
+			public const int GoogleApiKey = 2131296335;
+			
 			// aapt resource value: 0x7f090026
 			public const int abc_action_bar_home_description = 2131296294;
 			

@@ -23,8 +23,8 @@ namespace XamarinEvents.Models
         public string ContactNo2 { get; set; }
         public string EventStartDate { get; set; }
         public string EventEndDate { get; set; }
-        public string EventLatitude { get; set; }
-        public string EventLongitude { get; set; }
+        public double EventLatitude { get; set; }
+        public double EventLongitude { get; set; }
         public string CreatedOn { get; set; }
         public string AgencyID { get; set; }
         public string EventStatusName { get; set; }
