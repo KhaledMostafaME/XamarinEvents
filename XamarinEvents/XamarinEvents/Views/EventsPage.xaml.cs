@@ -100,10 +100,18 @@ namespace XamarinEvents.Views
 
         private async void EventsList_ItemSelectedAsync(object sender, SelectedItemChangedEventArgs e)
         {
-                Debug.WriteLine("###### Item Tabbed #######");
                 var selectedEvent = e.SelectedItem as Record;
 
-                await Navigation.PushAsync(new MapPage(selectedEvent));
+                await Navigation.PushModalAsync(new MapPage(selectedEvent));
+        }
+
+        private async void GetPins_ClickedAsync(object sender, EventArgs e)
+        {
+            if (res != null)
+                await Navigation.PushModalAsync(new MapPage(res.Records));
+            else
+                pushMsg.sendToast("Get Events first", 3000, Color.Red);
+
         }
     }
 }

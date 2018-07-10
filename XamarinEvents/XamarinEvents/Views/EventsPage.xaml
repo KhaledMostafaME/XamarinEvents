@@ -19,30 +19,31 @@
                         Text="Get Events" />
                     <Button
                         x:Name="GetPins"
+                        Clicked="GetPins_ClickedAsync"
                         HorizontalOptions="FillAndExpand"
                         Text="Open Map" />
                 </StackLayout>
-                <SearchBar
-                    x:Name="searchBar"
-                    CancelButtonColor="Red"
-                    HorizontalOptions="Start"
-                    Placeholder="Events Search"
-                    PlaceholderColor="Gray"
-                    SearchButtonPressed="searchBar_SearchButtonPressed"
-                    SearchCommand=""
-                    TextChanged="searchBar_TextChanged"
-                    TextColor="Black" />
-                <StackLayout
-                    HorizontalOptions="FillAndExpand"
-                    Orientation="Horizontal"
-                    Spacing="0">
-                    <Button
-                        x:Name="SortEvents"
-                        HorizontalOptions="FillAndExpand"
-                        Text="Sort" />
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100*" />
+                        <ColumnDefinition Width="25*" />
+                    </Grid.ColumnDefinitions>
+
+                    <SearchBar
+                        x:Name="searchBar"
+                        Grid.Column="0"
+                        CancelButtonColor="Red"
+                        HorizontalOptions="Start"
+                        Placeholder="Events Search"
+                        PlaceholderColor="Gray"
+                        SearchButtonPressed="searchBar_SearchButtonPressed"
+                        TextChanged="searchBar_TextChanged"
+                        TextColor="Black" />
+
                     <Picker
                         x:Name="searchPicker"
                         Title="Search by"
+                        Grid.Column="1"
                         HorizontalOptions="EndAndExpand">
                         <Picker.ItemsSource>
                             <x:Array Type="{x:Type x:String}">
@@ -53,6 +54,16 @@
                             </x:Array>
                         </Picker.ItemsSource>
                     </Picker>
+                </Grid>
+                <StackLayout
+                    HorizontalOptions="FillAndExpand"
+                    Orientation="Horizontal"
+                    Spacing="0">
+                    <Button
+                        x:Name="SortEvents"
+                        HorizontalOptions="FillAndExpand"
+                        Text="Sort" />
+
 
                 </StackLayout>
             </StackLayout>

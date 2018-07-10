@@ -12,12 +12,12 @@ using XamarinEvents.Models;
 
 namespace XamarinEvents.Views
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class MapPage : ContentPage
-	{
-		public MapPage ()
-		{
-			InitializeComponent();
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class MapPage : ContentPage
+    {
+        public MapPage()
+        {
+            InitializeComponent();
             //MyMap.MoveToRegion(MapSpan.FromCenterAndRadius(
             //    new Position(37, -122), Distance.FromMiles(1)));
         }
@@ -40,5 +40,21 @@ namespace XamarinEvents.Views
 
         }
 
+        public MapPage(IList<Record> items)
+        {
+            var viewdata = items
+                   .Select(item => new Pin
+                   {
+                       Type = PinType.Place,
+                       Id = item.EventID,
+                       Position = new Position(item.EventLatitude, item.EventLongitude),
+                       Label = item.EventTitle,
+                       Address = item.LocationDesc
+                   }).ToList();
+            foreach (Pin pin in viewdata)
+            {
+                MyMap.Pins.Add(pin);
+            }
+        }
     }
 }
