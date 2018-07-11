@@ -41,7 +41,7 @@ namespace XamarinEvents.Views
                 eventTitle = null,
                 fromDate = "Thu Jul 27 2017",
                 lang = "en",
-                pageSize = 10,
+                pageSize = 200,
                 regionID = 0,
                 startIndex = 0,
                 toDate = "Sun Dec 31 2017"
