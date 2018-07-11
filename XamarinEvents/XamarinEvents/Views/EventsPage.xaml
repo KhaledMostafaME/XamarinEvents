@@ -13,10 +13,9 @@
                     Orientation="Horizontal"
                     Spacing="0">
                     <Button
-                        x:Name="GetEvents"
-                        Clicked="GetEvents_ClickedAsync"
+                        x:Name="SortEvents"
                         HorizontalOptions="FillAndExpand"
-                        Text="Get Events" />
+                        Text="Sort" />
                     <Button
                         x:Name="GetPins"
                         Clicked="GetPins_ClickedAsync"
@@ -39,7 +38,6 @@
                         SearchButtonPressed="searchBar_SearchButtonPressed"
                         TextChanged="searchBar_TextChanged"
                         TextColor="Black" />
-
                     <Picker
                         x:Name="searchPicker"
                         Title="Search by"
@@ -60,14 +58,12 @@
                     Orientation="Horizontal"
                     Spacing="0">
                     <Button
-                        x:Name="SortEvents"
+                        x:Name="GetEvents"
+                        Clicked="GetEvents_ClickedAsync"
                         HorizontalOptions="FillAndExpand"
-                        Text="Sort" />
-
-
+                        Text="Get Events" />
                 </StackLayout>
             </StackLayout>
-
 
             <ListView
                 x:Name="EventsList"
