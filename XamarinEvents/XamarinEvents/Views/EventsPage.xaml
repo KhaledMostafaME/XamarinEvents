@@ -7,7 +7,6 @@
     <ContentPage.Content>
         <StackLayout Margin="10" Orientation="Vertical">
             <StackLayout>
-                <!--  Place new controls here  -->
                 <StackLayout
                     HorizontalOptions="FillAndExpand"
                     Orientation="Horizontal"
@@ -27,22 +26,21 @@
                         <ColumnDefinition Width="100*" />
                         <ColumnDefinition Width="25*" />
                     </Grid.ColumnDefinitions>
-
                     <SearchBar
                         x:Name="searchBar"
                         Grid.Column="0"
                         CancelButtonColor="Red"
-                        HorizontalOptions="Start"
                         Placeholder="Events Search"
                         PlaceholderColor="Gray"
                         SearchButtonPressed="searchBar_SearchButtonPressed"
                         TextChanged="searchBar_TextChanged"
-                        TextColor="Black" />
+                        TextColor="Black"
+                        VerticalOptions="Center" />
                     <Picker
                         x:Name="searchPicker"
                         Title="Search by"
                         Grid.Column="1"
-                        HorizontalOptions="EndAndExpand">
+                        VerticalOptions="Center">
                         <Picker.ItemsSource>
                             <x:Array Type="{x:Type x:String}">
                                 <x:String>Title</x:String>
@@ -64,7 +62,6 @@
                         Text="Get Events" />
                 </StackLayout>
             </StackLayout>
-
             <ListView
                 x:Name="EventsList"
                 ItemSelected="EventsList_ItemSelectedAsync"
@@ -87,7 +84,6 @@
                                             TextColor="Gray" />
                                     </StackLayout>
                                 </StackLayout>
-
                                 <ffimageloading:CachedImage
                                     CacheDuration="30"
                                     DownsampleToViewSize="true"
@@ -97,17 +93,8 @@
                                     Source="{Binding ImagePath, StringFormat='http://www.saudievents.sa:{0}'}"
                                     VerticalOptions="Center"
                                     WidthRequest="100" />
-
-                                <!--<Image
-                                    HeightRequest="30"
-                                    HorizontalOptions="EndAndExpand"
-                                    Source="{Binding ImagePath, StringFormat='http://www.saudievents.sa:{0}'}"
-                                    WidthRequest="50" />-->
-
                             </StackLayout>
                         </ViewCell>
-
-
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>

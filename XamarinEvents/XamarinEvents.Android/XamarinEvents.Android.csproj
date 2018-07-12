@@ -52,9 +52,6 @@
     <PackageReference Include="Acr.UserDialogs">
       <Version>7.0.1</Version>
     </PackageReference>
-    <PackageReference Include="LiveXAML">
-      <Version>2.1.36</Version>
-    </PackageReference>
     <PackageReference Include="Refit">
       <Version>4.6.16</Version>
     </PackageReference>
